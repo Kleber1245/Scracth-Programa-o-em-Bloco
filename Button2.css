@@ -1,0 +1,382 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Fonte moderna e legível */
+    color: #333;
+    background-color: purple; /* Cor de fundo roxa */
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    margin: 0; /* Remove margens padrão do body */
+    padding: 20px; /* Adiciona um pequeno padding ao body */
+    display: flex; /* Usamos flexbox para centralizar o page-container */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    border: 1px solid purple; /* Adiciona uma borda fina roxa ao body - REMOVER PARA PROD */
+    direction: rtl; /* Inverte o fluxo do texto para direita para esquerda */
+    text-align: right; /* Alinha o texto à direita */
+}
+
+.container { /* Adicionado para controle do fundo */
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: purple; /* Cor de fundo roxa */
+}
+
+/* REMOÇÃO DAS REGRAS DA IMAGEM DE FUNDO */
+.background-image {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* object-fit: cover; */
+    /* z-index: -1; */
+    display: none; /* Oculta a imagem de fundo, caso ainda esteja referenciada */
+}
+
+.page-container {
+    position: relative;
+    width: 90%;
+    max-width: 960px;
+    background-color: white; /* Fundo branco para o conteúdo principal */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 30px;
+    /* Remove a margem automática que estava centralizando, pois o body agora faz isso */
+    margin: 20px auto; /* Mantendo uma margem para espaçamento visual */
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.header-subtitle {
+    font-size: 1.1em;
+    color: #eee;
+    margin-bottom: 0;
+}
+
+.header-blue-section { /* Nova classe para o texto azul */
+    color: #add8e6; /* Um tom de azul claro; você pode ajustar */
+}
+
+header .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+header .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white; /* Botões brancos */
+    color: #007bff; /* Cor do texto dos botões */
+    border: none; /* Remove a borda padrão dos botões */
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    outline: none; /* Remove a borda de foco padrão */
+}
+
+header .button:focus {
+    box-shadow: 0 0 0 2px #007bff; /* Adiciona uma borda de foco personalizada se necessário */
+}
+
+header .button:hover {
+    background-color: #f0f8ff; /* Um tom mais claro de branco no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+header p {
+    font-size: 1.2em;
+    text-align: center;
+    color: #ddd;
+}
+
+#conteudo-control h2 { /* Renomeado para ser mais genérico */
+    color: #007bff;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5em;
+}
+
+#conteudo-control p { /* Renomeado para ser mais genérico */
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.video-container {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.video-container h2 {
+    color: #dc3545;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-description {
+    margin-top: 1.5em;
+    font-size: 0.95em;
+    color: #777;
+}
+
+#introducao-scratch { /* Renomeado para ser mais genérico */
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+#introducao-scratch h2 { /* Renomeado para ser mais genérico */
+    color: #28a745;
+    font-size: 2.2em;
+    margin-top: 0;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 0.6em;
+    margin-bottom: 1.2em;
+    text-align: center;
+}
+
+#introducao-scratch p { /* Renomeado para ser mais genérico */
+    margin-bottom: 1.5em;
+    font-size: 1.05em;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Importando a fonte Open Sans do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* --- Melhorias Sugeridas para o CSS --- */
+
+body {
+    /* Remova a borda roxa para produção */
+    border: none;
+}
+
+/* Cores semânticas - facilite a manutenção e consistência */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #28a745;
+    --text-primary: #333;
+    --text-secondary: #555;
+    --text-light: #eee;
+    --background-white: #fff;
+    --border-light: #eee;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --link-color: var(--primary-color);
+    --link-hover-background: #f0f8ff;
+}
+
+body {
+    color: var(--text-primary);
+    background-color: purple; /* Cor de fundo roxa */
+    direction: rtl; /* Inverte o fluxo do texto para direita para esquerda */
+    text-align: right; /* Alinha o texto à direita */
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    box-shadow: 0 2px 6px var(--shadow-light);
+    text-align: center;
+}
+
+header .button {
+    background-color: var(--background-white);
+    color: var(--primary-color);
+    box-shadow: 0 2px 4px var(--shadow-light);
+    text-align: center;
+}
+
+header .button:focus {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+header .button:hover {
+    background-color: var(--link-hover-background);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+header p {
+    color: var(--text-light);
+    text-align: center;
+}
+
+.page-container {
+    background-color: var(--background-white);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* Estilos de título de seção - mais genéricos */
+.section-title {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5em;
+}
+
+/* Estilos de parágrafo de seção - mais genéricos */
+.section-paragraph {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.video-container {
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 1px 3px var(--shadow-light);
+}
+
+.video-container h2 {
+    color: #dc3545;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.video-description {
+    color: #777;
+}
+
+/* Estilos para a seção de introdução - mais genéricos */
+.introduction-section {
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.introduction-section h2 {
+    color: var(--secondary-color);
+    font-size: 2.2em;
+    margin-top: 0;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.6em;
+    margin-bottom: 1.2em;
+    text-align: center;
+}
+
+.introduction-section p {
+    margin-bottom: 1.5em;
+    font-size: 1.05em;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Importando a fonte Open Sans do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Responsividade - Exemplo básico */
+@media (max-width: 768px) {
+    .page-container {
+        width: 95%;
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header .button-container {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    header .button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .section-paragraph {
+        font-size: 1em;
+    }
+
+    .video-container h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.7em;
+    }
+
+    header .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
